@@ -1,18 +1,244 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
+
+    <Button
+        android:id="@+id/butKey7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_below="@+id/butKeyAC"
+        android:layout_alignStart="@+id/butKeyAC"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="15dp"
+        android:text="@string/key7"
+        android:textSize="40sp" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <Button
+        android:id="@+id/butKey8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/butKey7"
+        android:layout_marginStart="12sp"
+        android:layout_marginTop="0sp"
+        android:layout_toEndOf="@+id/butKey7"
+        android:text="@string/key8"
+        android:textSize="40sp" />
+
+    <Button
+        android:id="@+id/butKey9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/butKey8"
+        android:layout_marginStart="12sp"
+        android:layout_marginTop="1sp"
+        android:layout_toEndOf="@+id/butKey8"
+        android:text="@string/key9"
+        android:textSize="40sp" />
+
+    <Button
+        android:id="@+id/butKey4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/butKey7"
+        android:layout_alignStart="@+id/butKey7"
+        android:layout_marginStart="0sp"
+        android:layout_marginTop="15sp"
+        android:text="@string/key4"
+        android:textSize="40sp" />
+
+    <Button
+        android:id="@+id/butKey5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/butKey4"
+        android:layout_marginStart="12sp"
+        android:layout_marginTop="0sp"
+        android:layout_toEndOf="@+id/butKey4"
+        android:text="@string/key5"
+        android:textSize="40sp" />
+
+    <Button
+        android:id="@+id/butKey6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/butKey5"
+        android:layout_marginStart="12sp"
+        android:layout_marginTop="0sp"
+        android:layout_toEndOf="@+id/butKey5"
+        android:text="@string/key6"
+        android:textSize="40sp" />
+
+    <Button
+        android:id="@+id/butKey1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/butKey4"
+        android:layout_alignStart="@+id/butKey4"
+        android:layout_marginStart="0sp"
+        android:layout_marginTop="15sp"
+        android:text="@string/key1"
+        android:textSize="40sp" />
+
+    <Button
+        android:id="@+id/butKey2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/butKey1"
+        android:layout_marginStart="12sp"
+        android:layout_marginTop="0sp"
+        android:layout_toEndOf="@+id/butKey1"
+        android:text="@string/key2"
+        android:textSize="40sp" />
+
+    <Button
+        android:id="@+id/butKey3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/butKey2"
+        android:layout_marginStart="12sp"
+        android:layout_marginTop="0sp"
+        android:layout_toEndOf="@+id/butKey2"
+        android:text="@string/key3"
+        android:textSize="40sp" />
+
+    <Button
+        android:id="@+id/multiply"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/butKey9"
+        android:layout_marginStart="12sp"
+        android:layout_marginTop="0sp"
+        android:layout_toEndOf="@+id/butKey9"
+        android:text="@string/keyMultiply"
+        android:textSize="40sp" />
+
+    <Button
+        android:id="@+id/minus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/butKey6"
+        android:layout_marginStart="12sp"
+        android:layout_marginTop="0sp"
+        android:layout_toEndOf="@+id/butKey6"
+        android:text="@string/keyMinus"
+        android:textSize="40sp" />
+
+    <Button
+        android:id="@+id/add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/butKey3"
+        android:layout_marginStart="12sp"
+        android:layout_marginTop="0sp"
+        android:layout_toEndOf="@+id/butKey3"
+        android:text="@string/keyAdd"
+        android:textSize="40sp"/>
+
+    <Button
+        android:id="@+id/butKey0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/butKey1"
+        android:layout_alignStart="@+id/butKey1"
+        android:layout_marginStart="0sp"
+        android:layout_marginTop="15sp"
+        android:text="@string/key0"
+        android:textSize="40sp" />
+
+    <Button
+        android:id="@+id/butKeyDot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/butKey0"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="0dp"
+        android:layout_toEndOf="@+id/butKey0"
+        android:text="@string/keyDot"
+        android:textSize="40sp" />
+
+    <Button
+        android:id="@+id/butKeyEqual"
+        android:layout_width="188dp"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/butKeyDot"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="0dp"
+        android:layout_toEndOf="@+id/butKeyDot"
+        android:text="@string/keyEuqal"
+        android:textSize="40sp" />
+
+    <Button
+        android:id="@+id/butKeyAC"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="299dp"
+        android:text="@string/keyClear"
+        android:textSize="40sp" />
+
+    <Button
+        android:id="@+id/butKeyBrackets"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/butKeyAC"
+        android:layout_marginStart="12sp"
+        android:layout_marginTop="0sp"
+        android:layout_toEndOf="@+id/butKeyAC"
+        android:text="@string/keyLeftParentheses"
+        android:textSize="40sp" />
+
+    <Button
+        android:id="@+id/butKeyPercent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/butKeyBrackets"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="0dp"
+        android:layout_toEndOf="@+id/butKeyBrackets"
+        android:text="@string/keyRightParentheses"
+        android:textSize="40sp" />
+
+    <Button
+        android:id="@+id/butKeyDivide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/butKeyPercent"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="0dp"
+        android:layout_toEndOf="@+id/butKeyPercent"
+        android:text="@string/keyDivide"
+        android:textSize="40sp" />
+
+    <TextView
+        android:id="@+id/txtEquation"
+        android:layout_width="341dp"
+        android:layout_height="72dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="58sp"
+        android:layout_marginEnd="15sp"
+        android:gravity="end"
+        android:text="5+4"
+        android:textSize="50sp" />
+
+    <TextView
+        android:id="@+id/txtAnswer"
+        android:layout_width="359dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="193sp"
+        android:layout_marginEnd="15sp"
+        android:gravity="end"
+        android:text="9"
+        android:textSize="60sp" />
+
+
+</RelativeLayout>
