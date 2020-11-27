@@ -107,7 +107,7 @@
         android:textSize="40sp" />
 
     <Button
-        android:id="@+id/multiply"
+        android:id="@+id/butKeyMultiply"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/butKey9"
@@ -118,7 +118,7 @@
         android:textSize="40sp" />
 
     <Button
-        android:id="@+id/minus"
+        android:id="@+id/butKeyMinus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/butKey6"
@@ -129,7 +129,7 @@
         android:textSize="40sp" />
 
     <Button
-        android:id="@+id/add"
+        android:id="@+id/butKeyAdd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/butKey3"
@@ -166,8 +166,8 @@
         android:layout_width="188dp"
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/butKeyDot"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="0dp"
+        android:layout_marginStart="12sp"
+        android:layout_marginTop="0sp"
         android:layout_toEndOf="@+id/butKeyDot"
         android:text="@string/keyEuqal"
         android:textSize="40sp" />
@@ -178,13 +178,13 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="12dp"
+        android:layout_marginStart="12sp"
         android:layout_marginTop="299dp"
         android:text="@string/keyClear"
         android:textSize="40sp" />
 
     <Button
-        android:id="@+id/butKeyBrackets"
+        android:id="@+id/butKeyLParentheses"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/butKeyAC"
@@ -195,13 +195,13 @@
         android:textSize="40sp" />
 
     <Button
-        android:id="@+id/butKeyPercent"
+        android:id="@+id/butKeyRParentheses"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/butKeyBrackets"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="0dp"
-        android:layout_toEndOf="@+id/butKeyBrackets"
+        android:layout_alignTop="@+id/butKeyLParentheses"
+        android:layout_marginStart="12sp"
+        android:layout_marginTop="0sp"
+        android:layout_toEndOf="@+id/butKeyLParentheses"
         android:text="@string/keyRightParentheses"
         android:textSize="40sp" />
 
@@ -209,36 +209,50 @@
         android:id="@+id/butKeyDivide"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/butKeyPercent"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="0dp"
-        android:layout_toEndOf="@+id/butKeyPercent"
+        android:layout_alignTop="@+id/butKeyRParentheses"
+        android:layout_marginStart="12sp"
+        android:layout_marginTop="0sp"
+        android:layout_toEndOf="@+id/butKeyRParentheses"
         android:text="@string/keyDivide"
         android:textSize="40sp" />
 
     <TextView
         android:id="@+id/txtEquation"
-        android:layout_width="341dp"
-        android:layout_height="72dp"
+        android:layout_width="371dp"
+        android:layout_height="80dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="58sp"
-        android:layout_marginEnd="15sp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="13dp"
         android:gravity="end"
-        android:text="5+4"
+        android:text=""
         android:textSize="50sp" />
 
     <TextView
         android:id="@+id/txtAnswer"
-        android:layout_width="359dp"
+        android:layout_width="379dp"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="193sp"
-        android:layout_marginEnd="15sp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="145dp"
+        android:layout_marginEnd="13dp"
         android:gravity="end"
-        android:text="9"
+        android:text=""
         android:textSize="60sp" />
+
+    <Button
+        android:id="@+id/butKeyDel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/butKeyDivide"
+        android:layout_alignStart="@+id/butKeyDivide"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="0sp"
+        android:text="@string/keyDel"
+        android:textSize="20sp" />
 
 
 </RelativeLayout>

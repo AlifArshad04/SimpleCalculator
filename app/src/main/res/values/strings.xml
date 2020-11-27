@@ -9,7 +9,7 @@
     <string name="key9">9</string>
     <string name="key4">4</string>
     <string name="key5">5</string>
-    <string name="keyMultiply">X</string>
+    <string name="keyMultiply">*</string>
     <string name="keyMinus">-</string>
     <string name="keyAdd">+</string>
     <string name="key0">0</string>
@@ -19,4 +19,5 @@
     <string name="keyClear">C</string>
     <string name="keyLeftParentheses">(</string>
     <string name="keyRightParentheses">)</string>
+    <string name="keyDel">DEL</string>
 </resources>
