@@ -3,9 +3,11 @@ package com.example.calculator;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import java.util.Stack;
+import java.util.Vector;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -13,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
     private Button lParentheses, rParentheses, backspace, add, subtract, multiply, divide;
     private TextView equation, result;
     String infix, sol;
+    static Vector<Double> postfix = new Vector<>();
 
 
     @Override
@@ -105,6 +108,8 @@ public class MainActivity extends AppCompatActivity {
 
         clear.setOnClickListener(v -> {
             infix = "";
+            sol = "";
+            result.setText(sol);
             equation.setText(infix);
         });
 
@@ -121,8 +126,10 @@ public class MainActivity extends AppCompatActivity {
         });
 
         equal.setOnClickListener(v -> {
-            //to be added
+            infixToPostfix();
+            calculatePostfix();
             result.setText(sol);
+            infix = "";
         });
 
 
@@ -151,6 +158,104 @@ public class MainActivity extends AppCompatActivity {
         divide = findViewById(R.id.butKeyDivide);
         equation = findViewById(R.id.txtEquation);
         result = findViewById(R.id.txtAnswer);
+
+    }
+
+    private void calculatePostfix() {
+        Stack<Double> operands = new Stack<>();
+        int i, len;
+        double n, op1, op2;
+        len = postfix.size();
+        for (i = 0; i < len; i++) {
+            n = postfix.elementAt(i);
+            if (n >= 0) {
+                operands.push(n);
+            } else {
+                op2 = operands.pop();
+                op1 = operands.pop();
+                if (n == -1.0)
+                    operands.push(op1 + op2);
+                else if (n == -2.0)
+                    operands.push(op1 - op2);
+                else if (n == -3.0)
+                    operands.push(op1 * op2);
+                else if (n == -4.0)
+                    operands.push(op1 / op2);
+            }
+        }
+        sol = operands.peek().toString();
+    }
+
+    private void infixToPostfix() {
+        int i, len;
+        char ch;
+        double number;
+        Stack<Character> buffer = new Stack<>();
+
+        len = infix.length();
+
+        for (i = 0; i < len; i++) {
+            ch = infix.charAt(i);
+
+            //adds operands in int form to postfix
+            if (Character.isDigit(ch)) {
+                number = ch - '0';
+                i++;
+                while (i < len) {
+                    ch = infix.charAt(i);
+                    if (!Character.isDigit(ch)) {
+                        break;
+                    }
+                    number = number * 10 + (ch - '0');
+                    i++;
+                }
+                postfix.add(number);
+            }
+
+            //adds operators in int form to postfix
+            if (ch == '+' || ch == '-' || ch == '*' || ch == '/') {
+                while (!buffer.empty() && buffer.peek() != '(' && !higherPresident(ch, buffer.peek())) {
+                    postfix.add(operatorToNegativeInt(buffer.pop()));
+                }
+                buffer.push(ch);
+            }
+
+            //handles parenthesis
+            else if (ch == '(')
+                buffer.push(ch);
+            else if (ch == ')') {
+                while (!buffer.empty() && buffer.peek() != '(') {
+                    postfix.add(operatorToNegativeInt(buffer.pop()));
+                }
+                buffer.pop();
+            }
+        }
+
+        //empties buffer
+        while (!buffer.empty()) {
+            postfix.add(operatorToNegativeInt(buffer.pop()));
+        }
+    }
+
+    private boolean higherPresident(char c1, char c2) {
+        if (c1 == '*' || c1 == '/') {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    private double operatorToNegativeInt(char ch) {
+        if (ch == '+')
+            return -1.0;
+        else if (ch == '-')
+            return -2.0;
+        else if (ch == '*')
+            return -3.0;
+        else if (ch == '/')
+            return -4.0;
+        else
+            return -99.9;
 
     }
 }
